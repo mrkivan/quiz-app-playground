@@ -1,0 +1,33 @@
+"dashboard_title" = "Quiz Master: Kotlin, Java & Android";
+"retry_button" = "Retry";
+"status_loading" = "Loading...";
+"status_error" = "Network Error";
+//Buttons
+"confirm_button" = "Confirm";
+"skip_button" = "Skip";
+"submit_button" = "Submit";
+"result_button" = "Result";
+"next_button" = "Next";
+"cancel_button" = "Cancel";
+
+//Alerts
+"alert_submit_answer_title" = "Submit Answer?";
+"alert_submit_answer_message" = "Are you sure you want to submit your answer?";
+
+"alert_skip_question_title" = "Skip Question?";
+"alert_skip_question_message" = "Are you sure you want to skip this question?";
+
+"alert_exit_quiz_title" = "Exit Quiz";
+"alert_exit_quiz_message" = "Are you sure you want to exit?";
+
+"alert_exit_title" = "Exit Quiz";
+"alert_exit_message" = "Are you sure you want to exit?";
+
+//Text / Labels
+"text_previous_result" = "Previous result: %@%%";  // use String(format:) in code
+"text_answer" = "Answer";
+"text_total_questions" = "Total Questions: %d";
+"text_correct_answers" = "Correct Answers: %d";
+"text_correct_items" = "Correct (%d)";
+"text_skipped_items" = "Skipped (%d)";
+"text_incorrect_items" = "Incorrect (%d)";
