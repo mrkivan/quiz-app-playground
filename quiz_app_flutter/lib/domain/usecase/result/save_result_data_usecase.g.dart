@@ -7,7 +7,7 @@ part of 'save_result_data_usecase.dart';
 // **************************************************************************
 
 String _$saveResultDataUseCaseHash() =>
-    r'0b9ebc5ba6414ec89830dca27024d096064f9997';
+    r'7ed7a9d9642ca9f2813a8f639926ddb5716f4654';
 
 /// See also [saveResultDataUseCase].
 @ProviderFor(saveResultDataUseCase)

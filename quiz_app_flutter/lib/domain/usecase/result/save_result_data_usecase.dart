@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app_flutter/data/cache/cache_manager.dart';
+import 'package:quiz_app_flutter/data/repository/result_repository.dart';
 import 'package:quiz_app_flutter/domain/entities/result/result_data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -9,17 +7,17 @@ part 'save_result_data_usecase.g.dart';
 
 @riverpod
 Future<SaveResultDataUseCase> saveResultDataUseCase(Ref ref) async {
-  final cacheManager = await ref.watch(cacheManagerProvider.future);
-  return SaveResultDataUseCase(cacheManager);
+  final repository = await ref.watch(resultRepositoryProvider.future);
+
+  return SaveResultDataUseCase(repository);
 }
 
 class SaveResultDataUseCase {
-  final CacheManager cacheManager;
+  final ResultRepository repository;
 
-  SaveResultDataUseCase(this.cacheManager);
+  SaveResultDataUseCase(this.repository);
 
   Future<void> call(String key, ResultData result) async {
-    final jsonString = json.encode(result.toJson());
-    await cacheManager.saveResult(key, jsonString);
+    await repository.saveResult(key, result);
   }
 }

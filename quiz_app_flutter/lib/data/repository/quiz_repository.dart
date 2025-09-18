@@ -2,17 +2,17 @@ import 'dart:async';
 
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quiz_app_flutter/data/cache/cache_manager.dart';
+import 'package:quiz_app_flutter/data/service/quiz_api.dart';
 import 'package:quiz_app_flutter/di/network_module.dart';
+import 'package:quiz_app_flutter/domain/entities/dashboard/dashboard_data.dart';
+import 'package:quiz_app_flutter/domain/entities/quiz/quiz_data.dart';
+import 'package:quiz_app_flutter/domain/entities/quiz_set/quiz_set_data.dart';
 import 'package:quiz_app_flutter/domain/mapper/dashboard_mapper.dart';
 import 'package:quiz_app_flutter/domain/mapper/quiz_mapper.dart';
 import 'package:quiz_app_flutter/domain/mapper/quiz_set_mapper.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/entities/dashboard/dashboard_data.dart';
-import '../../domain/entities/quiz/quiz_data.dart';
-import '../../domain/entities/quiz_set/quiz_set_data.dart';
-import '../cache/cache_manager.dart';
-import '../service/quiz_api.dart';
 
 part 'quiz_repository.g.dart';
 
@@ -32,8 +32,6 @@ class QuizRepository {
 
   Future<DashboardData> getDashboardData() async {
     try {
-      // TODO delete this delay
-      await Future.delayed(const Duration(milliseconds: 500));
       final cached = await cache.getDashboard();
       if (cached != null) {
         return cached.toDomain();
