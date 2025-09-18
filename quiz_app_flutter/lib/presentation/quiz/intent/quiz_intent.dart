@@ -7,13 +7,11 @@ part 'quiz_intent.freezed.dart';
 class QuizIntent with _$QuizIntent {
   const factory QuizIntent.loadQuiz(QuizScreenData data) = LoadQuiz;
 
-  const factory QuizIntent.submitAnswer() = SubmitAnswer;
+  const factory QuizIntent.nextQuestion() = NextQuestion;
 
   const factory QuizIntent.skipQuestion() = SkipQuestion;
 
-  const factory QuizIntent.nextQuestion() = NextQuestion;
-
   const factory QuizIntent.updateSelectedAnswers(List<int> answers) = UpdateSelectedAnswers;
 
-  const factory QuizIntent.navigateToResult() = NavigateToResult;
+  const factory QuizIntent.submitAnswer() = SubmitAnswer;
 }

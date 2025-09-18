@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app_flutter/presentation/quiz/quiz_state.dart';
+import 'package:quiz_app_flutter/presentation/quiz/state/quiz_state.dart';
 
 class QuizButtons extends ConsumerStatefulWidget {
   final QuizState quizState;

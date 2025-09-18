@@ -20,58 +20,52 @@ mixin _$QuizIntent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
     required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
     required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
+    required TResult Function() submitAnswer,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
     TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
     TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
+    TResult? Function()? submitAnswer,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
     TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
     TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
+    TResult Function()? submitAnswer,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(UpdateSelectedAnswers value)
     updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
+    required TResult Function(SubmitAnswer value) submitAnswer,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
+    TResult Function(SubmitAnswer value)? submitAnswer,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
@@ -181,11 +175,10 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
     required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
     required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
+    required TResult Function() submitAnswer,
   }) {
     return loadQuiz(data);
   }
@@ -194,11 +187,10 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
     TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
     TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
+    TResult? Function()? submitAnswer,
   }) {
     return loadQuiz?.call(data);
   }
@@ -207,11 +199,10 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
     TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
     TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
+    TResult Function()? submitAnswer,
     required TResult orElse(),
   }) {
     if (loadQuiz != null) {
@@ -224,12 +215,11 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(UpdateSelectedAnswers value)
     updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
+    required TResult Function(SubmitAnswer value) submitAnswer,
   }) {
     return loadQuiz(this);
   }
@@ -238,11 +228,10 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
   }) {
     return loadQuiz?.call(this);
   }
@@ -251,11 +240,10 @@ class _$LoadQuizImpl implements LoadQuiz {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
+    TResult Function(SubmitAnswer value)? submitAnswer,
     required TResult orElse(),
   }) {
     if (loadQuiz != null) {
@@ -275,270 +263,6 @@ abstract class LoadQuiz implements QuizIntent {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadQuizImplCopyWith<_$LoadQuizImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SubmitAnswerImplCopyWith<$Res> {
-  factory _$$SubmitAnswerImplCopyWith(
-    _$SubmitAnswerImpl value,
-    $Res Function(_$SubmitAnswerImpl) then,
-  ) = __$$SubmitAnswerImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SubmitAnswerImplCopyWithImpl<$Res>
-    extends _$QuizIntentCopyWithImpl<$Res, _$SubmitAnswerImpl>
-    implements _$$SubmitAnswerImplCopyWith<$Res> {
-  __$$SubmitAnswerImplCopyWithImpl(
-    _$SubmitAnswerImpl _value,
-    $Res Function(_$SubmitAnswerImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuizIntent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$SubmitAnswerImpl implements SubmitAnswer {
-  const _$SubmitAnswerImpl();
-
-  @override
-  String toString() {
-    return 'QuizIntent.submitAnswer()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SubmitAnswerImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
-    required TResult Function() nextQuestion,
-    required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
-  }) {
-    return submitAnswer();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
-    TResult? Function()? nextQuestion,
-    TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
-  }) {
-    return submitAnswer?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
-    TResult Function()? nextQuestion,
-    TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
-    required TResult orElse(),
-  }) {
-    if (submitAnswer != null) {
-      return submitAnswer();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
-    required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value)
-    updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
-  }) {
-    return submitAnswer(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
-    TResult? Function(NextQuestion value)? nextQuestion,
-    TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
-  }) {
-    return submitAnswer?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
-    TResult Function(NextQuestion value)? nextQuestion,
-    TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
-    required TResult orElse(),
-  }) {
-    if (submitAnswer != null) {
-      return submitAnswer(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SubmitAnswer implements QuizIntent {
-  const factory SubmitAnswer() = _$SubmitAnswerImpl;
-}
-
-/// @nodoc
-abstract class _$$SkipQuestionImplCopyWith<$Res> {
-  factory _$$SkipQuestionImplCopyWith(
-    _$SkipQuestionImpl value,
-    $Res Function(_$SkipQuestionImpl) then,
-  ) = __$$SkipQuestionImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SkipQuestionImplCopyWithImpl<$Res>
-    extends _$QuizIntentCopyWithImpl<$Res, _$SkipQuestionImpl>
-    implements _$$SkipQuestionImplCopyWith<$Res> {
-  __$$SkipQuestionImplCopyWithImpl(
-    _$SkipQuestionImpl _value,
-    $Res Function(_$SkipQuestionImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of QuizIntent
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$SkipQuestionImpl implements SkipQuestion {
-  const _$SkipQuestionImpl();
-
-  @override
-  String toString() {
-    return 'QuizIntent.skipQuestion()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SkipQuestionImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
-    required TResult Function() nextQuestion,
-    required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
-  }) {
-    return skipQuestion();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
-    TResult? Function()? nextQuestion,
-    TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
-  }) {
-    return skipQuestion?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
-    TResult Function()? nextQuestion,
-    TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
-    required TResult orElse(),
-  }) {
-    if (skipQuestion != null) {
-      return skipQuestion();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
-    required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value)
-    updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
-  }) {
-    return skipQuestion(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
-    TResult? Function(NextQuestion value)? nextQuestion,
-    TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
-  }) {
-    return skipQuestion?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
-    TResult Function(NextQuestion value)? nextQuestion,
-    TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
-    required TResult orElse(),
-  }) {
-    if (skipQuestion != null) {
-      return skipQuestion(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SkipQuestion implements QuizIntent {
-  const factory SkipQuestion() = _$SkipQuestionImpl;
 }
 
 /// @nodoc
@@ -585,11 +309,10 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
     required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
     required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
+    required TResult Function() submitAnswer,
   }) {
     return nextQuestion();
   }
@@ -598,11 +321,10 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
     TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
     TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
+    TResult? Function()? submitAnswer,
   }) {
     return nextQuestion?.call();
   }
@@ -611,11 +333,10 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
     TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
     TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
+    TResult Function()? submitAnswer,
     required TResult orElse(),
   }) {
     if (nextQuestion != null) {
@@ -628,12 +349,11 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(UpdateSelectedAnswers value)
     updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
+    required TResult Function(SubmitAnswer value) submitAnswer,
   }) {
     return nextQuestion(this);
   }
@@ -642,11 +362,10 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
   }) {
     return nextQuestion?.call(this);
   }
@@ -655,11 +374,10 @@ class _$NextQuestionImpl implements NextQuestion {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
+    TResult Function(SubmitAnswer value)? submitAnswer,
     required TResult orElse(),
   }) {
     if (nextQuestion != null) {
@@ -671,6 +389,132 @@ class _$NextQuestionImpl implements NextQuestion {
 
 abstract class NextQuestion implements QuizIntent {
   const factory NextQuestion() = _$NextQuestionImpl;
+}
+
+/// @nodoc
+abstract class _$$SkipQuestionImplCopyWith<$Res> {
+  factory _$$SkipQuestionImplCopyWith(
+    _$SkipQuestionImpl value,
+    $Res Function(_$SkipQuestionImpl) then,
+  ) = __$$SkipQuestionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SkipQuestionImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$SkipQuestionImpl>
+    implements _$$SkipQuestionImplCopyWith<$Res> {
+  __$$SkipQuestionImplCopyWithImpl(
+    _$SkipQuestionImpl _value,
+    $Res Function(_$SkipQuestionImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of QuizIntent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SkipQuestionImpl implements SkipQuestion {
+  const _$SkipQuestionImpl();
+
+  @override
+  String toString() {
+    return 'QuizIntent.skipQuestion()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SkipQuestionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(QuizScreenData data) loadQuiz,
+    required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
+    required TResult Function(List<int> answers) updateSelectedAnswers,
+    required TResult Function() submitAnswer,
+  }) {
+    return skipQuestion();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(QuizScreenData data)? loadQuiz,
+    TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
+    TResult? Function(List<int> answers)? updateSelectedAnswers,
+    TResult? Function()? submitAnswer,
+  }) {
+    return skipQuestion?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(QuizScreenData data)? loadQuiz,
+    TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
+    TResult Function(List<int> answers)? updateSelectedAnswers,
+    TResult Function()? submitAnswer,
+    required TResult orElse(),
+  }) {
+    if (skipQuestion != null) {
+      return skipQuestion();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadQuiz value) loadQuiz,
+    required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
+    required TResult Function(SubmitAnswer value) submitAnswer,
+  }) {
+    return skipQuestion(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoadQuiz value)? loadQuiz,
+    TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
+    TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
+  }) {
+    return skipQuestion?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadQuiz value)? loadQuiz,
+    TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
+    TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
+    TResult Function(SubmitAnswer value)? submitAnswer,
+    required TResult orElse(),
+  }) {
+    if (skipQuestion != null) {
+      return skipQuestion(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SkipQuestion implements QuizIntent {
+  const factory SkipQuestion() = _$SkipQuestionImpl;
 }
 
 /// @nodoc
@@ -755,11 +599,10 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
     required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
     required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
+    required TResult Function() submitAnswer,
   }) {
     return updateSelectedAnswers(answers);
   }
@@ -768,11 +611,10 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
     TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
     TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
+    TResult? Function()? submitAnswer,
   }) {
     return updateSelectedAnswers?.call(answers);
   }
@@ -781,11 +623,10 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
     TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
     TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
+    TResult Function()? submitAnswer,
     required TResult orElse(),
   }) {
     if (updateSelectedAnswers != null) {
@@ -798,12 +639,11 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(UpdateSelectedAnswers value)
     updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
+    required TResult Function(SubmitAnswer value) submitAnswer,
   }) {
     return updateSelectedAnswers(this);
   }
@@ -812,11 +652,10 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
   }) {
     return updateSelectedAnswers?.call(this);
   }
@@ -825,11 +664,10 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
+    TResult Function(SubmitAnswer value)? submitAnswer,
     required TResult orElse(),
   }) {
     if (updateSelectedAnswers != null) {
@@ -853,20 +691,20 @@ abstract class UpdateSelectedAnswers implements QuizIntent {
 }
 
 /// @nodoc
-abstract class _$$NavigateToResultImplCopyWith<$Res> {
-  factory _$$NavigateToResultImplCopyWith(
-    _$NavigateToResultImpl value,
-    $Res Function(_$NavigateToResultImpl) then,
-  ) = __$$NavigateToResultImplCopyWithImpl<$Res>;
+abstract class _$$SubmitAnswerImplCopyWith<$Res> {
+  factory _$$SubmitAnswerImplCopyWith(
+    _$SubmitAnswerImpl value,
+    $Res Function(_$SubmitAnswerImpl) then,
+  ) = __$$SubmitAnswerImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NavigateToResultImplCopyWithImpl<$Res>
-    extends _$QuizIntentCopyWithImpl<$Res, _$NavigateToResultImpl>
-    implements _$$NavigateToResultImplCopyWith<$Res> {
-  __$$NavigateToResultImplCopyWithImpl(
-    _$NavigateToResultImpl _value,
-    $Res Function(_$NavigateToResultImpl) _then,
+class __$$SubmitAnswerImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$SubmitAnswerImpl>
+    implements _$$SubmitAnswerImplCopyWith<$Res> {
+  __$$SubmitAnswerImplCopyWithImpl(
+    _$SubmitAnswerImpl _value,
+    $Res Function(_$SubmitAnswerImpl) _then,
   ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
@@ -875,18 +713,18 @@ class __$$NavigateToResultImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$NavigateToResultImpl implements NavigateToResult {
-  const _$NavigateToResultImpl();
+class _$SubmitAnswerImpl implements SubmitAnswer {
+  const _$SubmitAnswerImpl();
 
   @override
   String toString() {
-    return 'QuizIntent.navigateToResult()';
+    return 'QuizIntent.submitAnswer()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NavigateToResultImpl);
+        (other.runtimeType == runtimeType && other is _$SubmitAnswerImpl);
   }
 
   @override
@@ -896,41 +734,38 @@ class _$NavigateToResultImpl implements NavigateToResult {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(QuizScreenData data) loadQuiz,
-    required TResult Function() submitAnswer,
-    required TResult Function() skipQuestion,
     required TResult Function() nextQuestion,
+    required TResult Function() skipQuestion,
     required TResult Function(List<int> answers) updateSelectedAnswers,
-    required TResult Function() navigateToResult,
+    required TResult Function() submitAnswer,
   }) {
-    return navigateToResult();
+    return submitAnswer();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
-    TResult? Function()? submitAnswer,
-    TResult? Function()? skipQuestion,
     TResult? Function()? nextQuestion,
+    TResult? Function()? skipQuestion,
     TResult? Function(List<int> answers)? updateSelectedAnswers,
-    TResult? Function()? navigateToResult,
+    TResult? Function()? submitAnswer,
   }) {
-    return navigateToResult?.call();
+    return submitAnswer?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-    TResult Function()? submitAnswer,
-    TResult Function()? skipQuestion,
     TResult Function()? nextQuestion,
+    TResult Function()? skipQuestion,
     TResult Function(List<int> answers)? updateSelectedAnswers,
-    TResult Function()? navigateToResult,
+    TResult Function()? submitAnswer,
     required TResult orElse(),
   }) {
-    if (navigateToResult != null) {
-      return navigateToResult();
+    if (submitAnswer != null) {
+      return submitAnswer();
     }
     return orElse();
   }
@@ -939,47 +774,44 @@ class _$NavigateToResultImpl implements NavigateToResult {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
-    required TResult Function(SubmitAnswer value) submitAnswer,
-    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
+    required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(UpdateSelectedAnswers value)
     updateSelectedAnswers,
-    required TResult Function(NavigateToResult value) navigateToResult,
+    required TResult Function(SubmitAnswer value) submitAnswer,
   }) {
-    return navigateToResult(this);
+    return submitAnswer(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
-    TResult? Function(SubmitAnswer value)? submitAnswer,
-    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(NextQuestion value)? nextQuestion,
+    TResult? Function(SkipQuestion value)? skipQuestion,
     TResult? Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult? Function(NavigateToResult value)? navigateToResult,
+    TResult? Function(SubmitAnswer value)? submitAnswer,
   }) {
-    return navigateToResult?.call(this);
+    return submitAnswer?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadQuiz value)? loadQuiz,
-    TResult Function(SubmitAnswer value)? submitAnswer,
-    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(NextQuestion value)? nextQuestion,
+    TResult Function(SkipQuestion value)? skipQuestion,
     TResult Function(UpdateSelectedAnswers value)? updateSelectedAnswers,
-    TResult Function(NavigateToResult value)? navigateToResult,
+    TResult Function(SubmitAnswer value)? submitAnswer,
     required TResult orElse(),
   }) {
-    if (navigateToResult != null) {
-      return navigateToResult(this);
+    if (submitAnswer != null) {
+      return submitAnswer(this);
     }
     return orElse();
   }
 }
 
-abstract class NavigateToResult implements QuizIntent {
-  const factory NavigateToResult() = _$NavigateToResultImpl;
+abstract class SubmitAnswer implements QuizIntent {
+  const factory SubmitAnswer() = _$SubmitAnswerImpl;
 }

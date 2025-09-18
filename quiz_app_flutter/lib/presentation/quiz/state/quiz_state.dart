@@ -11,5 +11,6 @@ class QuizState with _$QuizState {
     @Default(false) bool isLastItem,
     @Default(0) int currentQuestionNumber,
     @Default(0) int totalQuestions,
+    @Default(false) bool hasInteracted, // Added for exit dialog
   }) = _QuizState;
 }

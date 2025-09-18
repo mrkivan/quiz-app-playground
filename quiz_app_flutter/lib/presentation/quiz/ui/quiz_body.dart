@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app_flutter/domain/entities/quiz/quiz_data.dart';
-import 'package:quiz_app_flutter/presentation/quiz/quiz_state.dart';
+import 'package:quiz_app_flutter/presentation/quiz/state/quiz_state.dart';
+import 'package:quiz_app_flutter/presentation/utils/ui/widgets/quiz_progress_with_shape.dart';
 
 import 'quiz_buttons.dart';
 
@@ -37,7 +38,10 @@ class QuizBody extends ConsumerWidget {
             children: [
               Expanded(child: Text(quizData.question, style: Theme.of(context).textTheme.titleMedium)),
               // Replace with your progress widget
-              Text('${quizState.currentQuestionNumber} / ${quizState.totalQuestions}'),
+              QuizProgressWithShape(
+                currentQuestion: quizState.currentQuestionNumber,
+                totalQuestions: quizState.totalQuestions,
+              ),
             ],
           ),
           const SizedBox(height: 16),

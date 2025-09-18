@@ -20,7 +20,7 @@ class QuizProgressWithShape extends StatelessWidget {
         ),
       ),
       child: Text(
-        'Question $currentQuestion of $totalQuestions',
+        '$currentQuestion/$totalQuestions',
         style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white),
       ),
     );
