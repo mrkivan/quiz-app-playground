@@ -4,7 +4,7 @@ class CircleWithNumber extends StatelessWidget {
   final int number;
   final double size;
 
-  const CircleWithNumber({Key? key, required this.number, this.size = 40}) : super(key: key);
+  const CircleWithNumber({super.key, required this.number, this.size = 40});
 
   @override
   Widget build(BuildContext context) {

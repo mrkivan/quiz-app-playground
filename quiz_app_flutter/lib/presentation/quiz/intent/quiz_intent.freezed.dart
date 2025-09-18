@@ -26,7 +26,6 @@ mixin _$QuizIntent {
     required TResult Function(List<int> answers) updateSelectedAnswers,
     required TResult Function() navigateToResult,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(QuizScreenData data)? loadQuiz,
@@ -39,30 +38,23 @@ mixin _$QuizIntent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(QuizScreenData data)? loadQuiz,
-
     TResult Function()? submitAnswer,
-
     TResult Function()? skipQuestion,
-
     TResult Function()? nextQuestion,
-
     TResult Function(List<int> answers)? updateSelectedAnswers,
-
     TResult Function()? navigateToResult,
-
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(LoadQuiz value) loadQuiz,
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(LoadQuiz value)? loadQuiz,
@@ -86,12 +78,15 @@ mixin _$QuizIntent {
 
 /// @nodoc
 abstract class $QuizIntentCopyWith<$Res> {
-  factory $QuizIntentCopyWith(QuizIntent value, $Res Function(QuizIntent) then) =
-      _$QuizIntentCopyWithImpl<$Res, QuizIntent>;
+  factory $QuizIntentCopyWith(
+    QuizIntent value,
+    $Res Function(QuizIntent) then,
+  ) = _$QuizIntentCopyWithImpl<$Res, QuizIntent>;
 }
 
 /// @nodoc
-class _$QuizIntentCopyWithImpl<$Res, $Val extends QuizIntent> implements $QuizIntentCopyWith<$Res> {
+class _$QuizIntentCopyWithImpl<$Res, $Val extends QuizIntent>
+    implements $QuizIntentCopyWith<$Res> {
   _$QuizIntentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -105,8 +100,10 @@ class _$QuizIntentCopyWithImpl<$Res, $Val extends QuizIntent> implements $QuizIn
 
 /// @nodoc
 abstract class _$$LoadQuizImplCopyWith<$Res> {
-  factory _$$LoadQuizImplCopyWith(_$LoadQuizImpl value, $Res Function(_$LoadQuizImpl) then) =
-      __$$LoadQuizImplCopyWithImpl<$Res>;
+  factory _$$LoadQuizImplCopyWith(
+    _$LoadQuizImpl value,
+    $Res Function(_$LoadQuizImpl) then,
+  ) = __$$LoadQuizImplCopyWithImpl<$Res>;
   @useResult
   $Res call({QuizScreenData data});
 
@@ -114,9 +111,13 @@ abstract class _$$LoadQuizImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$LoadQuizImplCopyWithImpl<$Res> extends _$QuizIntentCopyWithImpl<$Res, _$LoadQuizImpl>
+class __$$LoadQuizImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$LoadQuizImpl>
     implements _$$LoadQuizImplCopyWith<$Res> {
-  __$$LoadQuizImplCopyWithImpl(_$LoadQuizImpl _value, $Res Function(_$LoadQuizImpl) _then) : super(_value, _then);
+  __$$LoadQuizImplCopyWithImpl(
+    _$LoadQuizImpl _value,
+    $Res Function(_$LoadQuizImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
@@ -226,7 +227,8 @@ class _$LoadQuizImpl implements LoadQuiz {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return loadQuiz(this);
@@ -271,20 +273,26 @@ abstract class LoadQuiz implements QuizIntent {
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadQuizImplCopyWith<_$LoadQuizImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$LoadQuizImplCopyWith<_$LoadQuizImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$SubmitAnswerImplCopyWith<$Res> {
-  factory _$$SubmitAnswerImplCopyWith(_$SubmitAnswerImpl value, $Res Function(_$SubmitAnswerImpl) then) =
-      __$$SubmitAnswerImplCopyWithImpl<$Res>;
+  factory _$$SubmitAnswerImplCopyWith(
+    _$SubmitAnswerImpl value,
+    $Res Function(_$SubmitAnswerImpl) then,
+  ) = __$$SubmitAnswerImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SubmitAnswerImplCopyWithImpl<$Res> extends _$QuizIntentCopyWithImpl<$Res, _$SubmitAnswerImpl>
+class __$$SubmitAnswerImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$SubmitAnswerImpl>
     implements _$$SubmitAnswerImplCopyWith<$Res> {
-  __$$SubmitAnswerImplCopyWithImpl(_$SubmitAnswerImpl _value, $Res Function(_$SubmitAnswerImpl) _then)
-    : super(_value, _then);
+  __$$SubmitAnswerImplCopyWithImpl(
+    _$SubmitAnswerImpl _value,
+    $Res Function(_$SubmitAnswerImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
@@ -302,7 +310,8 @@ class _$SubmitAnswerImpl implements SubmitAnswer {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SubmitAnswerImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SubmitAnswerImpl);
   }
 
   @override
@@ -358,7 +367,8 @@ class _$SubmitAnswerImpl implements SubmitAnswer {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return submitAnswer(this);
@@ -401,15 +411,20 @@ abstract class SubmitAnswer implements QuizIntent {
 
 /// @nodoc
 abstract class _$$SkipQuestionImplCopyWith<$Res> {
-  factory _$$SkipQuestionImplCopyWith(_$SkipQuestionImpl value, $Res Function(_$SkipQuestionImpl) then) =
-      __$$SkipQuestionImplCopyWithImpl<$Res>;
+  factory _$$SkipQuestionImplCopyWith(
+    _$SkipQuestionImpl value,
+    $Res Function(_$SkipQuestionImpl) then,
+  ) = __$$SkipQuestionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SkipQuestionImplCopyWithImpl<$Res> extends _$QuizIntentCopyWithImpl<$Res, _$SkipQuestionImpl>
+class __$$SkipQuestionImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$SkipQuestionImpl>
     implements _$$SkipQuestionImplCopyWith<$Res> {
-  __$$SkipQuestionImplCopyWithImpl(_$SkipQuestionImpl _value, $Res Function(_$SkipQuestionImpl) _then)
-    : super(_value, _then);
+  __$$SkipQuestionImplCopyWithImpl(
+    _$SkipQuestionImpl _value,
+    $Res Function(_$SkipQuestionImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
@@ -427,7 +442,8 @@ class _$SkipQuestionImpl implements SkipQuestion {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$SkipQuestionImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SkipQuestionImpl);
   }
 
   @override
@@ -483,7 +499,8 @@ class _$SkipQuestionImpl implements SkipQuestion {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return skipQuestion(this);
@@ -526,15 +543,20 @@ abstract class SkipQuestion implements QuizIntent {
 
 /// @nodoc
 abstract class _$$NextQuestionImplCopyWith<$Res> {
-  factory _$$NextQuestionImplCopyWith(_$NextQuestionImpl value, $Res Function(_$NextQuestionImpl) then) =
-      __$$NextQuestionImplCopyWithImpl<$Res>;
+  factory _$$NextQuestionImplCopyWith(
+    _$NextQuestionImpl value,
+    $Res Function(_$NextQuestionImpl) then,
+  ) = __$$NextQuestionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NextQuestionImplCopyWithImpl<$Res> extends _$QuizIntentCopyWithImpl<$Res, _$NextQuestionImpl>
+class __$$NextQuestionImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$NextQuestionImpl>
     implements _$$NextQuestionImplCopyWith<$Res> {
-  __$$NextQuestionImplCopyWithImpl(_$NextQuestionImpl _value, $Res Function(_$NextQuestionImpl) _then)
-    : super(_value, _then);
+  __$$NextQuestionImplCopyWithImpl(
+    _$NextQuestionImpl _value,
+    $Res Function(_$NextQuestionImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
@@ -552,7 +574,8 @@ class _$NextQuestionImpl implements NextQuestion {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$NextQuestionImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NextQuestionImpl);
   }
 
   @override
@@ -608,7 +631,8 @@ class _$NextQuestionImpl implements NextQuestion {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return nextQuestion(this);
@@ -687,7 +711,8 @@ class __$$UpdateSelectedAnswersImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
-  const _$UpdateSelectedAnswersImpl(final List<int> answers) : _answers = answers;
+  const _$UpdateSelectedAnswersImpl(final List<int> answers)
+    : _answers = answers;
 
   final List<int> _answers;
   @override
@@ -711,15 +736,20 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(_answers));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_answers));
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateSelectedAnswersImplCopyWith<_$UpdateSelectedAnswersImpl> get copyWith =>
-      __$$UpdateSelectedAnswersImplCopyWithImpl<_$UpdateSelectedAnswersImpl>(this, _$identity);
+  _$$UpdateSelectedAnswersImplCopyWith<_$UpdateSelectedAnswersImpl>
+  get copyWith =>
+      __$$UpdateSelectedAnswersImplCopyWithImpl<_$UpdateSelectedAnswersImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   @optionalTypeArgs
@@ -771,7 +801,8 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return updateSelectedAnswers(this);
@@ -809,27 +840,34 @@ class _$UpdateSelectedAnswersImpl implements UpdateSelectedAnswers {
 }
 
 abstract class UpdateSelectedAnswers implements QuizIntent {
-  const factory UpdateSelectedAnswers(final List<int> answers) = _$UpdateSelectedAnswersImpl;
+  const factory UpdateSelectedAnswers(final List<int> answers) =
+      _$UpdateSelectedAnswersImpl;
 
   List<int> get answers;
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UpdateSelectedAnswersImplCopyWith<_$UpdateSelectedAnswersImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$UpdateSelectedAnswersImplCopyWith<_$UpdateSelectedAnswersImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$NavigateToResultImplCopyWith<$Res> {
-  factory _$$NavigateToResultImplCopyWith(_$NavigateToResultImpl value, $Res Function(_$NavigateToResultImpl) then) =
-      __$$NavigateToResultImplCopyWithImpl<$Res>;
+  factory _$$NavigateToResultImplCopyWith(
+    _$NavigateToResultImpl value,
+    $Res Function(_$NavigateToResultImpl) then,
+  ) = __$$NavigateToResultImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NavigateToResultImplCopyWithImpl<$Res> extends _$QuizIntentCopyWithImpl<$Res, _$NavigateToResultImpl>
+class __$$NavigateToResultImplCopyWithImpl<$Res>
+    extends _$QuizIntentCopyWithImpl<$Res, _$NavigateToResultImpl>
     implements _$$NavigateToResultImplCopyWith<$Res> {
-  __$$NavigateToResultImplCopyWithImpl(_$NavigateToResultImpl _value, $Res Function(_$NavigateToResultImpl) _then)
-    : super(_value, _then);
+  __$$NavigateToResultImplCopyWithImpl(
+    _$NavigateToResultImpl _value,
+    $Res Function(_$NavigateToResultImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizIntent
   /// with the given fields replaced by the non-null parameter values.
@@ -847,7 +885,8 @@ class _$NavigateToResultImpl implements NavigateToResult {
 
   @override
   bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$NavigateToResultImpl);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NavigateToResultImpl);
   }
 
   @override
@@ -903,7 +942,8 @@ class _$NavigateToResultImpl implements NavigateToResult {
     required TResult Function(SubmitAnswer value) submitAnswer,
     required TResult Function(SkipQuestion value) skipQuestion,
     required TResult Function(NextQuestion value) nextQuestion,
-    required TResult Function(UpdateSelectedAnswers value) updateSelectedAnswers,
+    required TResult Function(UpdateSelectedAnswers value)
+    updateSelectedAnswers,
     required TResult Function(NavigateToResult value) navigateToResult,
   }) {
     return navigateToResult(this);

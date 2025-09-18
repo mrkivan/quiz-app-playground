@@ -28,7 +28,7 @@ class QuizAppTopAppBar extends StatelessWidget implements PreferredSizeWidget {
   final QuizAppToolbar toolbarConfig;
   final double elevation;
 
-  const QuizAppTopAppBar({Key? key, required this.toolbarConfig, this.elevation = 4.0}) : super(key: key);
+  const QuizAppTopAppBar({super.key, required this.toolbarConfig, this.elevation = 4.0});
 
   @override
   Widget build(BuildContext context) {

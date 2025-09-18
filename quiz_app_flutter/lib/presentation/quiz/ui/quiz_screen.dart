@@ -1,14 +1,12 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quiz_app_flutter/presentation/quiz/intent/quiz_intent.dart';
-import 'package:quiz_app_flutter/presentation/quiz/intent/quiz_nav_event.dart';
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_data_notifier.dart';
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_interaction_notifier.dart';
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_result_notifier.dart';
 import 'package:quiz_app_flutter/presentation/quiz/route/quiz_screen_data.dart';
+import 'package:quiz_app_flutter/presentation/route/app_router.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/placeholder_scaffold.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/quiz_app_top_appbar.dart';
 
@@ -25,7 +23,6 @@ class QuizScreen extends ConsumerStatefulWidget {
 }
 
 class QuizScreenState extends ConsumerState<QuizScreen> {
-  StreamSubscription<QuizNavEvent>? _navSubscription;
   bool showExitConfirmationDialog = false;
 
   @override
@@ -35,32 +32,7 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
       await ref
           .read(quizDataNotifierProvider(screenData: widget.screenData).notifier)
           .reload(screenData: widget.screenData);
-
-      if (widget.quizId > 0) {
-        ref
-            .read(quizDataNotifierProvider(screenData: widget.screenData).notifier)
-            .handleDataIntent(QuizIntent.nextQuestion());
-      }
-
-      _navSubscription = ref
-          .read(quizResultNotifierProvider(screenData: widget.screenData).notifier)
-          .navigationEvents
-          .listen((event) {
-            if (mounted) {
-              GoRouter.of(context).pop();
-              /*GoRouter.of(context).push(
-            QuizMasterDestinations.routeResult,
-            extra: event.resultKey,
-          );*/
-            }
-          });
     });
-  }
-
-  @override
-  void dispose() {
-    _navSubscription?.cancel();
-    super.dispose();
   }
 
   void navigateToNextQuestion() {
@@ -74,7 +46,7 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
   }
 
   bool showExitDialog() {
-    final quizId = ref.read(quizDataNotifierProvider(screenData: widget.screenData).notifier).quizId;
+    final quizId = ref.read(quizDataNotifierProvider(screenData: widget.screenData).notifier).getNextQuizPosition;
     final selectedAnswers = ref.read(quizInteractionNotifierProvider(screenData: widget.screenData)).selectedAnswers;
     return quizId > 1 || selectedAnswers.isNotEmpty;
   }
@@ -83,7 +55,7 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
   Widget build(BuildContext context) {
     final quizDataAsync = ref.watch(quizDataNotifierProvider(screenData: widget.screenData));
     final quizState = ref.watch(quizInteractionNotifierProvider(screenData: widget.screenData));
-    final quizResult = ref.watch(quizResultNotifierProvider(screenData: widget.screenData));
+    //final quizResult = ref.watch(quizResultNotifierProvider(screenData: widget.screenData));
 
     return Stack(
       children: [
@@ -102,7 +74,8 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
           asyncValue: quizDataAsync,
           onRetryClicked: loadData,
           bodyContent: (data) {
-            final currentQuizId = ref.read(quizDataNotifierProvider(screenData: widget.screenData).notifier).quizId;
+            final currentQuizId =
+                ref.read(quizDataNotifierProvider(screenData: widget.screenData).notifier).getNextQuizPosition;
             return AnimatedSwitcher(
               duration: const Duration(milliseconds: 300),
               transitionBuilder:
@@ -131,10 +104,15 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
                         .handleDataIntent(QuizIntent.skipQuestion());
                   },
                   moveToNextQuestion: navigateToNextQuestion,
-                  navigateToResultScreen: () {
-                    ref
-                        .read(quizResultNotifierProvider(screenData: widget.screenData).notifier)
-                        .handleResultIntent(QuizIntent.navigateToResult());
+                  navigateToResultScreen: () async {
+                    final resultKey =
+                        await ref
+                            .read(quizResultNotifierProvider(screenData: widget.screenData).notifier)
+                            .saveResultData();
+                    if (mounted) {
+                      context.pop();
+                      context.push(QuizMasterDestinations.routeResult, extra: resultKey);
+                    }
                   },
                 ),
               ),

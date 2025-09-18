@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:quiz_app_flutter/domain/entities/quiz/quiz_data.dart'; // Adjust import for QuizData
 import 'package:quiz_app_flutter/domain/usecase/quiz/get_quiz_data_bysetandtopic_usecase.dart';
 import 'package:quiz_app_flutter/presentation/quiz/intent/quiz_intent.dart'; // Adjust import for QuizIntent
-import 'package:quiz_app_flutter/presentation/quiz/intent/quiz_nav_event.dart';
 import 'package:quiz_app_flutter/presentation/quiz/route/quiz_screen_data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -15,19 +14,12 @@ part 'quiz_data_notifier.g.dart';
 
 @riverpod
 class QuizDataNotifier extends _$QuizDataNotifier {
-  final _navigationEventsController = StreamController<QuizNavEvent>.broadcast();
-
-  Stream<QuizNavEvent> get navigationEvents => _navigationEventsController.stream;
-
   List<QuizData> _cacheQuizList = [];
   int _currentQuizPosition = 0;
   QuizScreenData? _cacheScreenData;
 
   @override
   Future<QuizData> build({required QuizScreenData screenData}) async {
-    ref.onDispose(() {
-      _navigationEventsController.close();
-    });
     _cacheScreenData = screenData;
     return _loadQuizInternal(screenData);
   }
@@ -52,20 +44,21 @@ class QuizDataNotifier extends _$QuizDataNotifier {
   void _moveToNextQuestion({bool isSkipped = false}) {
     ref.read(quizResultNotifierProvider(screenData: _cacheScreenData!).notifier).saveResult(isSkipped: isSkipped);
 
-    final nextIndex = _currentQuizPosition + 1;
+    final nextIndex = getNextQuizPosition;
     if (nextIndex < _cacheQuizList.length) {
       _currentQuizPosition = nextIndex;
       ref.read(quizInteractionNotifierProvider(screenData: _cacheScreenData!).notifier).resetForNextQuestion();
       ref
           .read(quizInteractionNotifierProvider(screenData: _cacheScreenData!).notifier)
           .updateQuizState(
-            currentQuestionNumber: quizId,
+            currentQuestionNumber: getNextQuizPosition,
             totalQuestions: _cacheQuizList.length,
             isLastItem: isLastItem,
           );
       state = AsyncData(_cacheQuizList[_currentQuizPosition]); // Emit current quiz to trigger UI update
     } else {
-      ref.read(quizResultNotifierProvider(screenData: _cacheScreenData!).notifier).navigateToResultScreen();
+      ref.read(quizResultNotifierProvider(screenData: _cacheScreenData!).notifier).saveResultData();
+      // TODO navigate to result screen
     }
   }
 
@@ -81,7 +74,7 @@ class QuizDataNotifier extends _$QuizDataNotifier {
 
   QuizData get currentQuiz => _cacheQuizList[_currentQuizPosition];
 
-  int get quizId => _currentQuizPosition + 1;
+  int get getNextQuizPosition => _currentQuizPosition + 1;
 
   bool get isLastItem => _currentQuizPosition + 1 == _cacheQuizList.length;
 

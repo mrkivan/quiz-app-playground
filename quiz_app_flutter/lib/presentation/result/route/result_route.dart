@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app_flutter/presentation/result/ui/result_screen.dart';
 
 class ResultRoute extends StatelessWidget {
   final String resultKey;
@@ -7,6 +8,6 @@ class ResultRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Result Screen for key: $resultKey')));
+    return Scaffold(body: ResultScreen(key: key, resultKey: resultKey));
   }
 }

@@ -10,13 +10,17 @@ String _$quizRepositoryHash() => r'78952a9c7e51fa16215beda4766e100b69fce8ce';
 
 /// See also [quizRepository].
 @ProviderFor(quizRepository)
-final quizRepositoryProvider = AutoDisposeFutureProvider<QuizRepository>.internal(
-  quizRepository,
-  name: r'quizRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$quizRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final quizRepositoryProvider =
+    AutoDisposeFutureProvider<QuizRepository>.internal(
+      quizRepository,
+      name: r'quizRepositoryProvider',
+      debugGetCreateSourceHash:
+          const bool.fromEnvironment('dart.vm.product')
+              ? null
+              : _$quizRepositoryHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element

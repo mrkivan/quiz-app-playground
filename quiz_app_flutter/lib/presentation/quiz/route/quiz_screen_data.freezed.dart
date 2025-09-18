@@ -22,11 +22,8 @@ QuizScreenData _$QuizScreenDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$QuizScreenData {
   String? get quizTitle => throw _privateConstructorUsedError;
-
   String? get quizDescription => throw _privateConstructorUsedError;
-
   QuizSetItem? get quizSection => throw _privateConstructorUsedError;
-
   int get currentQuizPosition => throw _privateConstructorUsedError;
 
   /// Serializes this QuizScreenData to a JSON map.
@@ -35,27 +32,34 @@ mixin _$QuizScreenData {
   /// Create a copy of QuizScreenData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $QuizScreenDataCopyWith<QuizScreenData> get copyWith => throw _privateConstructorUsedError;
+  $QuizScreenDataCopyWith<QuizScreenData> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuizScreenDataCopyWith<$Res> {
-  factory $QuizScreenDataCopyWith(QuizScreenData value, $Res Function(QuizScreenData) then) =
-      _$QuizScreenDataCopyWithImpl<$Res, QuizScreenData>;
-
+  factory $QuizScreenDataCopyWith(
+    QuizScreenData value,
+    $Res Function(QuizScreenData) then,
+  ) = _$QuizScreenDataCopyWithImpl<$Res, QuizScreenData>;
   @useResult
-  $Res call({String? quizTitle, String? quizDescription, QuizSetItem? quizSection, int currentQuizPosition});
+  $Res call({
+    String? quizTitle,
+    String? quizDescription,
+    QuizSetItem? quizSection,
+    int currentQuizPosition,
+  });
 
   $QuizSetItemCopyWith<$Res>? get quizSection;
 }
 
 /// @nodoc
-class _$QuizScreenDataCopyWithImpl<$Res, $Val extends QuizScreenData> implements $QuizScreenDataCopyWith<$Res> {
+class _$QuizScreenDataCopyWithImpl<$Res, $Val extends QuizScreenData>
+    implements $QuizScreenDataCopyWith<$Res> {
   _$QuizScreenDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -112,23 +116,33 @@ class _$QuizScreenDataCopyWithImpl<$Res, $Val extends QuizScreenData> implements
 }
 
 /// @nodoc
-abstract class _$$QuizScreenDataImplCopyWith<$Res> implements $QuizScreenDataCopyWith<$Res> {
-  factory _$$QuizScreenDataImplCopyWith(_$QuizScreenDataImpl value, $Res Function(_$QuizScreenDataImpl) then) =
-      __$$QuizScreenDataImplCopyWithImpl<$Res>;
-
+abstract class _$$QuizScreenDataImplCopyWith<$Res>
+    implements $QuizScreenDataCopyWith<$Res> {
+  factory _$$QuizScreenDataImplCopyWith(
+    _$QuizScreenDataImpl value,
+    $Res Function(_$QuizScreenDataImpl) then,
+  ) = __$$QuizScreenDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? quizTitle, String? quizDescription, QuizSetItem? quizSection, int currentQuizPosition});
+  $Res call({
+    String? quizTitle,
+    String? quizDescription,
+    QuizSetItem? quizSection,
+    int currentQuizPosition,
+  });
 
   @override
   $QuizSetItemCopyWith<$Res>? get quizSection;
 }
 
 /// @nodoc
-class __$$QuizScreenDataImplCopyWithImpl<$Res> extends _$QuizScreenDataCopyWithImpl<$Res, _$QuizScreenDataImpl>
+class __$$QuizScreenDataImplCopyWithImpl<$Res>
+    extends _$QuizScreenDataCopyWithImpl<$Res, _$QuizScreenDataImpl>
     implements _$$QuizScreenDataImplCopyWith<$Res> {
-  __$$QuizScreenDataImplCopyWithImpl(_$QuizScreenDataImpl _value, $Res Function(_$QuizScreenDataImpl) _then)
-    : super(_value, _then);
+  __$$QuizScreenDataImplCopyWithImpl(
+    _$QuizScreenDataImpl _value,
+    $Res Function(_$QuizScreenDataImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of QuizScreenData
   /// with the given fields replaced by the non-null parameter values.
@@ -170,9 +184,15 @@ class __$$QuizScreenDataImplCopyWithImpl<$Res> extends _$QuizScreenDataCopyWithI
 /// @nodoc
 @JsonSerializable()
 class _$QuizScreenDataImpl implements _QuizScreenData {
-  const _$QuizScreenDataImpl({this.quizTitle, this.quizDescription, this.quizSection, this.currentQuizPosition = -1});
+  const _$QuizScreenDataImpl({
+    this.quizTitle,
+    this.quizDescription,
+    this.quizSection,
+    this.currentQuizPosition = -1,
+  });
 
-  factory _$QuizScreenDataImpl.fromJson(Map<String, dynamic> json) => _$$QuizScreenDataImplFromJson(json);
+  factory _$QuizScreenDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QuizScreenDataImplFromJson(json);
 
   @override
   final String? quizTitle;
@@ -194,16 +214,25 @@ class _$QuizScreenDataImpl implements _QuizScreenData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$QuizScreenDataImpl &&
-            (identical(other.quizTitle, quizTitle) || other.quizTitle == quizTitle) &&
-            (identical(other.quizDescription, quizDescription) || other.quizDescription == quizDescription) &&
-            (identical(other.quizSection, quizSection) || other.quizSection == quizSection) &&
+            (identical(other.quizTitle, quizTitle) ||
+                other.quizTitle == quizTitle) &&
+            (identical(other.quizDescription, quizDescription) ||
+                other.quizDescription == quizDescription) &&
+            (identical(other.quizSection, quizSection) ||
+                other.quizSection == quizSection) &&
             (identical(other.currentQuizPosition, currentQuizPosition) ||
                 other.currentQuizPosition == currentQuizPosition));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, quizTitle, quizDescription, quizSection, currentQuizPosition);
+  int get hashCode => Object.hash(
+    runtimeType,
+    quizTitle,
+    quizDescription,
+    quizSection,
+    currentQuizPosition,
+  );
 
   /// Create a copy of QuizScreenData
   /// with the given fields replaced by the non-null parameter values.
@@ -211,7 +240,10 @@ class _$QuizScreenDataImpl implements _QuizScreenData {
   @override
   @pragma('vm:prefer-inline')
   _$$QuizScreenDataImplCopyWith<_$QuizScreenDataImpl> get copyWith =>
-      __$$QuizScreenDataImplCopyWithImpl<_$QuizScreenDataImpl>(this, _$identity);
+      __$$QuizScreenDataImplCopyWithImpl<_$QuizScreenDataImpl>(
+        this,
+        _$identity,
+      );
 
   @override
   Map<String, dynamic> toJson() {
@@ -227,17 +259,15 @@ abstract class _QuizScreenData implements QuizScreenData {
     final int currentQuizPosition,
   }) = _$QuizScreenDataImpl;
 
-  factory _QuizScreenData.fromJson(Map<String, dynamic> json) = _$QuizScreenDataImpl.fromJson;
+  factory _QuizScreenData.fromJson(Map<String, dynamic> json) =
+      _$QuizScreenDataImpl.fromJson;
 
   @override
   String? get quizTitle;
-
   @override
   String? get quizDescription;
-
   @override
   QuizSetItem? get quizSection;
-
   @override
   int get currentQuizPosition;
 
@@ -245,5 +275,6 @@ abstract class _QuizScreenData implements QuizScreenData {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$QuizScreenDataImplCopyWith<_$QuizScreenDataImpl> get copyWith => throw _privateConstructorUsedError;
+  _$$QuizScreenDataImplCopyWith<_$QuizScreenDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

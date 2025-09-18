@@ -13,7 +13,8 @@ String _$cacheManagerHash() => r'05d745dda8d7c8480fc5d25b793ef6332e25b921';
 final cacheManagerProvider = FutureProvider<CacheManager>.internal(
   cacheManager,
   name: r'cacheManagerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$cacheManagerHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$cacheManagerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

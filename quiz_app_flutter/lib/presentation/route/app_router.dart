@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quiz_app_flutter/presentation/dashboard/route/dashboard_route.dart';
 import 'package:quiz_app_flutter/presentation/quiz/route/quiz_route.dart';
@@ -45,6 +46,7 @@ final GoRouter router = GoRouter(
       path: QuizMasterDestinations.routeResult,
       builder: (context, state) {
         final resultKey = state.extra as String? ?? '';
+        debugPrint("-------------- ResultRoute $resultKey");
         return ResultRoute(resultKey: resultKey);
       },
     ),

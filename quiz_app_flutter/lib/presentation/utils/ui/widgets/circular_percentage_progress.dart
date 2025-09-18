@@ -11,14 +11,14 @@ class CircularPercentageProgress extends StatelessWidget {
   final TextStyle percentageTextStyle;
 
   const CircularPercentageProgress({
-    Key? key,
+    super.key,
     required this.progress,
     this.size = 50,
     this.strokeWidth = 8,
     this.progressColor = Colors.green,
     this.backgroundColor = Colors.grey,
     this.percentageTextStyle = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
