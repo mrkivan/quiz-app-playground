@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:quiz_app_flutter/generated/locale_keys.g.dart';
 import 'package:quiz_app_flutter/presentation/quiz/state/quiz_state.dart';
 
 class QuizButtons extends ConsumerStatefulWidget {
@@ -31,16 +33,16 @@ class _QuizButtonsState extends ConsumerState<QuizButtons> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: const Text('Submit Answer'),
-            content: const Text('Are you sure you want to submit your answer?'),
+            title: Text(LocaleKeys.submit_dialog_title.tr()),
+            content: Text(LocaleKeys.submit_dialog_description.tr()),
             actions: [
-              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+              TextButton(onPressed: () => Navigator.pop(context), child: Text(LocaleKeys.button_cancel.tr())),
               TextButton(
                 onPressed: () {
                   widget.submitAnswer();
                   Navigator.pop(context);
                 },
-                child: const Text('Confirm'),
+                child: Text(LocaleKeys.button_confirm.tr()),
               ),
             ],
           ),
@@ -52,16 +54,16 @@ class _QuizButtonsState extends ConsumerState<QuizButtons> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: const Text('Skip Question'),
-            content: const Text('Are you sure you want to skip this question?'),
+            title: Text(LocaleKeys.skip_dialog_title.tr()),
+            content: Text(LocaleKeys.skip_dialog_description.tr()),
             actions: [
-              TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+              TextButton(onPressed: () => Navigator.pop(context), child: Text(LocaleKeys.button_cancel.tr())),
               TextButton(
                 onPressed: () {
                   widget.skipQuestion();
                   Navigator.pop(context);
                 },
-                child: const Text('Skip'),
+                child: Text(LocaleKeys.button_skip.tr()),
               ),
             ],
           ),
@@ -84,7 +86,7 @@ class _QuizButtonsState extends ConsumerState<QuizButtons> {
                   (!quizState.isSubmitted && quizState.selectedAnswers.isEmpty && !quizState.isLastItem)
                       ? _showSkipDialog
                       : null,
-              child: const Text('Skip'),
+              child: Text(LocaleKeys.button_skip.tr()),
             ),
           ),
           const SizedBox(width: 8),
@@ -92,7 +94,7 @@ class _QuizButtonsState extends ConsumerState<QuizButtons> {
           Expanded(
             child: ElevatedButton(
               onPressed: (quizState.selectedAnswers.isNotEmpty && !quizState.isSubmitted) ? _showSubmitDialog : null,
-              child: const Text('Submit'),
+              child: Text(LocaleKeys.button_submit.tr()),
             ),
           ),
           const SizedBox(width: 8),
@@ -109,7 +111,7 @@ class _QuizButtonsState extends ConsumerState<QuizButtons> {
                         }
                       }
                       : null,
-              child: Text(quizState.isLastItem ? 'Result' : 'Next'),
+              child: Text(quizState.isLastItem ? LocaleKeys.button_result.tr() : LocaleKeys.button_next.tr()),
             ),
           ),
         ],

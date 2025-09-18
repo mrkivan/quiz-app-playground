@@ -1,7 +1,21 @@
 {
-  "ok": "OK",
-  "cancel": "Cancel",
-  "confirm": "Confirm",
-  "continue_text": "Continue",
-  "no_data": "No data"
+  "dashboard_title": "Quiz App: Android, Kotlin, Java",
+  "quiz_set_previous_result": "Previous Result: {percentage}%",
+  "button_skip": "Skip",
+  "button_submit": "Submit",
+  "button_next": "Next",
+  "button_result": "Result",
+  "button_confirm": "Confirm",
+  "button_cancel": "Cancel",
+  "skip_dialog_title": "Skip Question",
+  "skip_dialog_description": "Are you sure you want to skip this question?",
+  "submit_dialog_title": "Submit Answer",
+  "submit_dialog_description": "Are you sure you want to submit your answer?",
+  "exit_quiz_title": "Exit Quiz",
+  "exit_quiz_description": "Are you sure you want to exit the quiz? Your progress will be lost.",
+  "result_total_questions": "Total Questions: {count}",
+  "result_incorrect_answers": "Incorrect Answers: {count}",
+  "result_tab_correct": "Correct",
+  "result_tab_incorrect": "Incorrect",
+  "result_tab_skipped": "Skipped"
 }

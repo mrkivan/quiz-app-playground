@@ -35,6 +35,12 @@ class QuizMasterApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(title: 'QuizMaster', theme: ThemeData(primarySwatch: Colors.blue), routerConfig: _router);
+    return MaterialApp.router(
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      routerConfig: _router,
+    );
   }
 }

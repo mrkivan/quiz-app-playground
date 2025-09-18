@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:quiz_app_flutter/generated/locale_keys.g.dart';
 import 'package:quiz_app_flutter/presentation/quiz/intent/quiz_intent.dart';
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_data_notifier.dart';
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_interaction_notifier.dart';
@@ -122,10 +124,10 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
           ),
           if (showExitConfirmationDialog)
             ConfirmDialog(
-              title: 'Exit Quiz',
-              message: 'Are you sure you want to exit the quiz?',
+              title: LocaleKeys.exit_quiz_title.tr(),
+              message: LocaleKeys.exit_quiz_description.tr(),
               onConfirm: () => context.pop(),
-              confirmButtonLabel: 'Confirm',
+              confirmButtonLabel: LocaleKeys.button_confirm.tr(),
               showDialogState: showExitConfirmationDialog,
               onDismiss: () {
                 setState(() {

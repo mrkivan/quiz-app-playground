@@ -45,3 +45,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+# iOS build and dependency files
+ios/*
+!ios/Runner/Info.plist
+!ios/Runner/Assets.xcassets

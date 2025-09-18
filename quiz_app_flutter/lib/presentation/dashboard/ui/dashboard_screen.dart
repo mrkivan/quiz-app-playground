@@ -1,9 +1,11 @@
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quiz_app_flutter/domain/entities/dashboard/dashboard_data.dart';
+import 'package:quiz_app_flutter/generated/locale_keys.g.dart';
 import 'package:quiz_app_flutter/presentation/dashboard/intent/dashboard_nav_quiz_sets.dart';
 import 'package:quiz_app_flutter/presentation/dashboard/notifiers/dashboard_data_notifier.dart';
 import 'package:quiz_app_flutter/presentation/route/app_router.dart';
@@ -45,7 +47,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     final uiState = ref.watch(dashboardDataNotifierProvider);
 
     return PlaceholderScaffold<DashboardData>(
-      toolbarConfig: QuizAppToolbar(title: 'Quiz App'),
+      toolbarConfig: QuizAppToolbar(title: LocaleKeys.dashboard_title.tr()),
       asyncValue: uiState,
       padding: const EdgeInsets.all(16.0),
       onRetryClicked: () async {
