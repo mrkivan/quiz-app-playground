@@ -5,6 +5,8 @@ import 'package:quiz_app_flutter/presentation/utils/ui/widgets/app_text_styles.d
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/base_card_view.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/circle_with_number.dart';
 
+import 'quiz_set_previous_result.dart';
+
 class QuizSetScreenItemWidget extends StatelessWidget {
   final QuizSetItem quizSetItemData;
   final VoidCallback onItemClick;
@@ -40,10 +42,10 @@ class QuizSetScreenItemWidget extends StatelessWidget {
                       AppTextStyles.quizBodyDesc(quizSetItemData.description),
                       if (quizSetItemData.previousResult != null) ...[
                         AppSpacers.smallHeight,
-                        /*PreviousResultButton(
-                          quizSetItemData.previousResult!,
-                          onClick: () => navigateToResultView(quizSetItemData.fileName),
-                        ),*/
+                        PreviousResultButton(
+                          resultData: quizSetItemData.previousResult!,
+                          navigateToResultView: () => navigateToResultView(quizSetItemData.fileName),
+                        ),
                       ],
                     ],
                   ),

@@ -73,9 +73,7 @@ class _QuizSetScreenState extends ConsumerState<QuizSetScreen> {
                 ref.read(quizSetDataNotifierProvider(quizTopic: widget.quizTopic).notifier).navigateToQuiz(section);
               },
               navigateToResultView: (fileName) {
-                Navigator.of(
-                  context,
-                ).pushNamed(QuizMasterDestinations.routeResult, arguments: {NavKeys.dataKeyResult: fileName});
+                context.pushReplacement(QuizMasterDestinations.routeResult, extra: fileName);
               },
             );
           },

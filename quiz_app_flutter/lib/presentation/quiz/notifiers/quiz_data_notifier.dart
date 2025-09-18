@@ -55,13 +55,6 @@ class QuizDataNotifier extends _$QuizDataNotifier {
           isLastItem: isLastItem,
         );
       state = AsyncData(_cacheQuizList[_currentQuizPosition]);
-    } else {
-      // Save result for last question if submitted
-      if (state.value != null) {
-        ref.read(quizResultNotifierProvider(screenData: _cacheScreenData!).notifier).saveResult(isSkipped: isSkipped);
-      }
-      // Trigger final save (navigation handled in QuizScreen)
-      ref.read(quizResultNotifierProvider(screenData: _cacheScreenData!).notifier).saveResultData();
     }
   }
 

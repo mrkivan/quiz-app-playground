@@ -59,17 +59,6 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
     final quizDataAsync = ref.watch(quizDataNotifierProvider(screenData: widget.screenData));
     final quizState = ref.watch(quizInteractionNotifierProvider(screenData: widget.screenData));
 
-    // Navigate to result screen if last item and results are saved
-    if (quizState.isLastItem && quizDataAsync.hasValue) {
-      WidgetsBinding.instance.addPostFrameCallback((_) async {
-        await _quizResultNotifier.saveResultData();
-        if (mounted) {
-          final resultKey = await _quizResultNotifier.saveResultData();
-          context.pushReplacement(QuizMasterDestinations.routeResult, extra: resultKey);
-        }
-      });
-    }
-
     return PopScope(
       canPop: !showExitDialog(),
       onPopInvoked: (didPop) async {
@@ -120,6 +109,7 @@ class QuizScreenState extends ConsumerState<QuizScreen> {
                     },
                     moveToNextQuestion: navigateToNextQuestion,
                     navigateToResultScreen: () async {
+                      _quizResultNotifier.saveResult();
                       final resultKey = await _quizResultNotifier.saveResultData();
                       if (mounted) {
                         context.pushReplacement(QuizMasterDestinations.routeResult, extra: resultKey);

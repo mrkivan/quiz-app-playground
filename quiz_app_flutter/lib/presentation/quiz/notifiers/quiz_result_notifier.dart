@@ -6,7 +6,6 @@ import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_data_notifier.
 import 'package:quiz_app_flutter/presentation/quiz/notifiers/quiz_interaction_notifier.dart';
 import 'package:quiz_app_flutter/presentation/quiz/route/quiz_screen_data.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:uuid/uuid.dart';
 
 part 'quiz_result_notifier.g.dart';
 
@@ -26,7 +25,7 @@ class QuizResultNotifier extends _$QuizResultNotifier {
 
   void saveResult({bool isSkipped = false}) {
     final quizData = ref.read(quizDataNotifierProvider(screenData: screenData).notifier).currentQuiz;
-    final selectedAnswers = ref.read(quizInteractionNotifierProvider(screenData: screenData)).selectedAnswers;
+    //final selectedAnswers = ref.read(quizInteractionNotifierProvider(screenData: screenData)).selectedAnswers;
     final resultItem = ResultItem(
       question: quizData.question,
       correctAnswer: quizData.correctAnswer.answer,
@@ -54,7 +53,7 @@ class QuizResultNotifier extends _$QuizResultNotifier {
       resultPercentage: totalQuiz > 0 ? ((correctAnswers / totalQuiz) * 100).toInt() : 0,
     );
 
-    final resultKey = '${screenData.quizSection?.fileName ?? ''}_${Uuid().v4()}';
+    final resultKey = screenData.quizSection?.fileName ?? '';
     debugPrint("Saving with key: $resultKey, ResultItems: ${resultData.resultItems.length}");
     final useCase = await ref.read(saveResultDataUseCaseProvider.future);
     await useCase(resultKey, resultData);
