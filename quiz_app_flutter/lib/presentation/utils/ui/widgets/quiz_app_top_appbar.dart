@@ -21,22 +21,14 @@ class ToolbarAction {
   final String contentDescription;
   final VoidCallback onClick;
 
-  ToolbarAction({
-    required this.icon,
-    required this.contentDescription,
-    required this.onClick,
-  });
+  ToolbarAction({required this.icon, required this.contentDescription, required this.onClick});
 }
 
 class QuizAppTopAppBar extends StatelessWidget implements PreferredSizeWidget {
   final QuizAppToolbar toolbarConfig;
   final double elevation;
 
-  const QuizAppTopAppBar({
-    Key? key,
-    required this.toolbarConfig,
-    this.elevation = 4.0,
-  }) : super(key: key);
+  const QuizAppTopAppBar({Key? key, required this.toolbarConfig, this.elevation = 4.0}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +49,8 @@ class QuizAppTopAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions:
           toolbarConfig.actions
               .map(
-                (action) => IconButton(
-                  icon: Icon(action.icon),
-                  tooltip: action.contentDescription,
-                  onPressed: action.onClick,
-                ),
+                (action) =>
+                    IconButton(icon: Icon(action.icon), tooltip: action.contentDescription, onPressed: action.onClick),
               )
               .toList(),
     );

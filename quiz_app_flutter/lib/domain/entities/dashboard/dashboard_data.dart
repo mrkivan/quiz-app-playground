@@ -5,13 +5,9 @@ part 'dashboard_data.g.dart';
 
 @freezed
 class DashboardData with _$DashboardData {
-  const factory DashboardData({
-    required int total,
-    required List<DashboardDataItem> items,
-  }) = _DashboardData;
+  const factory DashboardData({required int total, required List<DashboardDataItem> items}) = _DashboardData;
 
-  factory DashboardData.fromJson(Map<String, dynamic> json) =>
-      _$DashboardDataFromJson(json);
+  factory DashboardData.fromJson(Map<String, dynamic> json) => _$DashboardDataFromJson(json);
 }
 
 @freezed
@@ -25,8 +21,7 @@ class DashboardDataItem with _$DashboardDataItem {
     required List<DashboardDataSection> sections,
   }) = _DashboardDataItem;
 
-  factory DashboardDataItem.fromJson(Map<String, dynamic> json) =>
-      _$DashboardDataItemFromJson(json);
+  factory DashboardDataItem.fromJson(Map<String, dynamic> json) => _$DashboardDataItemFromJson(json);
 }
 
 @freezed
@@ -38,6 +33,5 @@ class DashboardDataSection with _$DashboardDataSection {
     required String fileName,
   }) = _DashboardDataSection;
 
-  factory DashboardDataSection.fromJson(Map<String, dynamic> json) =>
-      _$DashboardDataSectionFromJson(json);
+  factory DashboardDataSection.fromJson(Map<String, dynamic> json) => _$DashboardDataSectionFromJson(json);
 }

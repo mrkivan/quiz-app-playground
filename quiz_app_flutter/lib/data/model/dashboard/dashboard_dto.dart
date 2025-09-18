@@ -4,14 +4,15 @@ part 'dashboard_dto.freezed.dart';
 part 'dashboard_dto.g.dart';
 
 @freezed
-class DashboardDto with _$DashboardDto {
-  const factory DashboardDto({
-    required int total,
-    required List<ItemDto> items,
-  }) = _DashboardDto;
+class SectionDto with _$SectionDto {
+  const factory SectionDto({
+    required String title,
+    required String description,
+    required int position,
+    required String fileName,
+  }) = _SectionDto;
 
-  factory DashboardDto.fromJson(Map<String, dynamic> json) =>
-      _$DashboardDtoFromJson(json);
+  factory SectionDto.fromJson(Map<String, dynamic> json) => _$SectionDtoFromJson(json);
 }
 
 @freezed
@@ -25,19 +26,12 @@ class ItemDto with _$ItemDto {
     required int sectionId,
   }) = _ItemDto;
 
-  factory ItemDto.fromJson(Map<String, dynamic> json) =>
-      _$ItemDtoFromJson(json);
+  factory ItemDto.fromJson(Map<String, dynamic> json) => _$ItemDtoFromJson(json);
 }
 
 @freezed
-class SectionDto with _$SectionDto {
-  const factory SectionDto({
-    required String title,
-    required String description,
-    required int position,
-    required String fileName,
-  }) = _SectionDto;
+class DashboardDto with _$DashboardDto {
+  const factory DashboardDto({required int total, required List<ItemDto> items}) = _DashboardDto;
 
-  factory SectionDto.fromJson(Map<String, dynamic> json) =>
-      _$SectionDtoFromJson(json);
+  factory DashboardDto.fromJson(Map<String, dynamic> json) => _$DashboardDtoFromJson(json);
 }

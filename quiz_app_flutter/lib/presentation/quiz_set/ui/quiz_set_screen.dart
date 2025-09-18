@@ -2,15 +2,15 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:quiz_app_flutter/di/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:quiz_app_flutter/domain/entities/quiz_set/quiz_set_data.dart';
 import 'package:quiz_app_flutter/presentation/quiz_set/intent/quiz_set_intent.dart';
+import 'package:quiz_app_flutter/presentation/quiz_set/notifiers/quiz_set_data_notifier.dart';
 import 'package:quiz_app_flutter/presentation/route/app_router.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/placeholder_scaffold.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/quiz_app_top_appbar.dart';
 
 import 'quiz_set_item_widget.dart';
-
 
 class QuizSetScreen extends ConsumerStatefulWidget {
   final String quizTopic;
@@ -22,49 +22,43 @@ class QuizSetScreen extends ConsumerStatefulWidget {
 }
 
 class _QuizSetScreenState extends ConsumerState<QuizSetScreen> {
-  StreamSubscription<QuizSetNavEvent>? _navSubscription;
+  StreamSubscription<NavigateToQuiz>? _navSubscription;
 
   @override
   void initState() {
     super.initState();
 
-    // Trigger load after first frame
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref
-          .read(quizSetViewModelProvider.notifier)
-          .handleIntent(LoadQuizSet(widget.quizTopic));
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      // Replace 'math' with the desired quizTopic or pass null if not needed
+      await ref
+          .read(quizSetDataNotifierProvider(quizTopic: widget.quizTopic).notifier)
+          .reload(quizTopic: widget.quizTopic);
 
-    // Listen to navigation events
-    _navSubscription = ref
-        .read(quizSetViewModelProvider.notifier)
-        .navigationEvents
-        .listen((event) {
-      if (event is NavigateToQuiz) {
-        // Save data if needed and navigate
-        /*Navigator.of(context).pushNamed(
-          QuizMasterDestinations.routeQuiz,
-          arguments: {NavKeys.dataKeyQuiz: event.data},
-        );*/
-      }
+      // Listen for navigation events
+      _navSubscription = ref
+          .read(quizSetDataNotifierProvider(quizTopic: widget.quizTopic).notifier)
+          .navigationEvents
+          .listen((event) {
+            if (mounted) {
+              context.push(QuizMasterDestinations.routeQuiz, extra: event.data);
+            }
+          });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final uiState = ref.watch(quizSetViewModelProvider);
-    final title = uiState.map(
-      loading: (_) => 'Loading...',
-      success: (s) => s.data.title,
-      error: (_) => 'Error',
+    final uiState = ref.watch(quizSetDataNotifierProvider(quizTopic: widget.quizTopic));
+
+    final title = uiState.when(
+      loading: () => 'Loading...',
+      data: (data) => data.title,
+      error: (error, stackTrace) => 'Error',
     );
 
     return PlaceholderScaffold<QuizSetData>(
-      toolbarConfig: QuizAppToolbar(
-        title: title,
-        onNavigationClick: () => Navigator.of(context).pop(),
-      ),
-      uiState: uiState,
+      toolbarConfig: QuizAppToolbar(title: title, onNavigationClick: () => Navigator.of(context).pop()),
+      asyncValue: uiState,
       bodyContent: (data) {
         final sections = data.sections;
         return ListView.separated(
@@ -76,15 +70,12 @@ class _QuizSetScreenState extends ConsumerState<QuizSetScreen> {
             return QuizSetScreenItemWidget(
               quizSetItemData: section,
               onItemClick: () {
-                ref
-                    .read(quizSetViewModelProvider.notifier);
-                    //.handleIntent(NavigateToQuiz(section));
+                ref.read(quizSetDataNotifierProvider(quizTopic: widget.quizTopic).notifier).navigateToQuiz(section);
               },
               navigateToResultView: (fileName) {
-                Navigator.of(context).pushNamed(
-                  QuizMasterDestinations.routeResult,
-                  arguments: {NavKeys.dataKeyResult: fileName},
-                );
+                Navigator.of(
+                  context,
+                ).pushNamed(QuizMasterDestinations.routeResult, arguments: {NavKeys.dataKeyResult: fileName});
               },
             );
           },

@@ -9,11 +9,7 @@ class DashboardItemWidget extends StatelessWidget {
   final DashboardDataItem item; // Your domain model equivalent
   final VoidCallback onClick;
 
-  const DashboardItemWidget({
-    super.key,
-    required this.item,
-    required this.onClick,
-  });
+  const DashboardItemWidget({super.key, required this.item, required this.onClick});
 
   @override
   Widget build(BuildContext context) {

@@ -17,11 +17,7 @@ class CircularPercentageProgress extends StatelessWidget {
     this.strokeWidth = 8,
     this.progressColor = Colors.green,
     this.backgroundColor = Colors.grey,
-    this.percentageTextStyle = const TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-      color: Colors.black,
-    ),
+    this.percentageTextStyle = const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
   }) : super(key: key);
 
   @override
@@ -37,11 +33,7 @@ class CircularPercentageProgress extends StatelessWidget {
             width: size,
             height: size,
             child: CustomPaint(
-              painter: _CirclePainter(
-                progress: 1.0,
-                color: backgroundColor,
-                strokeWidth: strokeWidth,
-              ),
+              painter: _CirclePainter(progress: 1.0, color: backgroundColor, strokeWidth: strokeWidth),
             ),
           ),
           // Progress circle
@@ -49,11 +41,7 @@ class CircularPercentageProgress extends StatelessWidget {
             width: size,
             height: size,
             child: CustomPaint(
-              painter: _CirclePainter(
-                progress: progress,
-                color: progressColor,
-                strokeWidth: strokeWidth,
-              ),
+              painter: _CirclePainter(progress: progress, color: progressColor, strokeWidth: strokeWidth),
             ),
           ),
           // Percentage Text
@@ -69,11 +57,7 @@ class _CirclePainter extends CustomPainter {
   final Color color;
   final double strokeWidth;
 
-  _CirclePainter({
-    required this.progress,
-    required this.color,
-    required this.strokeWidth,
-  });
+  _CirclePainter({required this.progress, required this.color, required this.strokeWidth});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -87,13 +71,7 @@ class _CirclePainter extends CustomPainter {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = (size.width - strokeWidth) / 2;
 
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      -pi / 2,
-      2 * pi * progress,
-      false,
-      paint,
-    );
+    canvas.drawArc(Rect.fromCircle(center: center, radius: radius), -pi / 2, 2 * pi * progress, false, paint);
   }
 
   @override

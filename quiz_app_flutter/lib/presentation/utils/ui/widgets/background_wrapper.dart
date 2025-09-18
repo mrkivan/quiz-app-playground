@@ -10,12 +10,7 @@ class BackgroundWrapper extends StatelessWidget {
     return Stack(
       children: [
         // Full-screen background
-        SizedBox.expand(
-          child: Image.asset(
-            'assets/backgrounds/ic_app_bg.webp',
-            fit: BoxFit.cover,
-          ),
-        ),
+        SizedBox.expand(child: Image.asset('assets/backgrounds/ic_app_bg.webp', fit: BoxFit.cover)),
         // Your foreground content
         child,
       ],

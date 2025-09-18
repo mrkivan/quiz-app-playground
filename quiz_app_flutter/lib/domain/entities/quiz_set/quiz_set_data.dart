@@ -1,10 +1,29 @@
-// lib/features/quiz/data/models/quiz_set_data.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../result/result_data.dart';
+import 'package:quiz_app_flutter/domain/entities/result/result_data.dart';
 
 part 'quiz_set_data.freezed.dart';
 part 'quiz_set_data.g.dart';
+
+ResultData? _resultDataFromJson(Map<String, dynamic>? json) {
+  return json == null ? null : ResultData.fromJson(json);
+}
+
+Map<String, dynamic>? _resultDataToJson(ResultData? instance) {
+  return instance?.toJson();
+}
+
+@freezed
+class QuizSetItem with _$QuizSetItem {
+  const factory QuizSetItem({
+    required String title,
+    required String description,
+    required int position,
+    required String fileName,
+    @JsonKey(fromJson: _resultDataFromJson, toJson: _resultDataToJson) ResultData? previousResult,
+  }) = _QuizSetItem;
+
+  factory QuizSetItem.fromJson(Map<String, dynamic> json) => _$QuizSetItemFromJson(json);
+}
 
 @freezed
 class QuizSetData with _$QuizSetData {
@@ -17,20 +36,5 @@ class QuizSetData with _$QuizSetData {
     required List<QuizSetItem> sections,
   }) = _QuizSetData;
 
-  factory QuizSetData.fromJson(Map<String, dynamic> json) =>
-      _$QuizSetDataFromJson(json);
-}
-
-@freezed
-class QuizSetItem with _$QuizSetItem {
-  const factory QuizSetItem({
-    required String title,
-    required String description,
-    required int position,
-    required String fileName,
-    ResultData? previousResult, // nullable by default
-  }) = _QuizSetItem;
-
-  factory QuizSetItem.fromJson(Map<String, dynamic> json) =>
-      _$QuizSetItemFromJson(json);
+  factory QuizSetData.fromJson(Map<String, dynamic> json) => _$QuizSetDataFromJson(json);
 }

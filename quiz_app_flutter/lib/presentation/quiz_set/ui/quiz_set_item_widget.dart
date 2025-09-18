@@ -53,12 +53,7 @@ class QuizSetScreenItemWidget extends StatelessWidget {
           ),
 
           // Circle overlapping on the left
-          Positioned(
-            left: 0,
-            top: 0,
-            bottom: 0,
-            child: CircleWithNumber(number: quizSetItemData.position),
-          ),
+          Positioned(left: 0, top: 0, bottom: 0, child: CircleWithNumber(number: quizSetItemData.position)),
         ],
       ),
     );

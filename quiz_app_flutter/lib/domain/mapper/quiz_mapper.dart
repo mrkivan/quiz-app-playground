@@ -25,10 +25,6 @@ extension AnswerCellDtoX on QuizListDto.AnswerCellDto {
 }
 
 extension CorrectAnswerDtoX on QuizListDto.CorrectAnswerDto {
-  QuizCorrectAnswer toDomain() => QuizCorrectAnswer(
-    questionId: questionId,
-    answerId: answerId,
-    answer: answer,
-    explanation: explanation,
-  );
+  QuizCorrectAnswer toDomain() =>
+      QuizCorrectAnswer(questionId: questionId, answerId: answerId, answer: answer, explanation: explanation);
 }

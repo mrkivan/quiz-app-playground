@@ -4,11 +4,7 @@ class QuizProgressWithShape extends StatelessWidget {
   final int currentQuestion;
   final int totalQuestions;
 
-  const QuizProgressWithShape({
-    super.key,
-    required this.currentQuestion,
-    required this.totalQuestions,
-  });
+  const QuizProgressWithShape({super.key, required this.currentQuestion, required this.totalQuestions});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +21,7 @@ class QuizProgressWithShape extends StatelessWidget {
       ),
       child: Text(
         'Question $currentQuestion of $totalQuestions',
-        style: Theme.of(
-          context,
-        ).textTheme.titleMedium?.copyWith(color: Colors.white),
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(color: Colors.white),
       ),
     );
   }

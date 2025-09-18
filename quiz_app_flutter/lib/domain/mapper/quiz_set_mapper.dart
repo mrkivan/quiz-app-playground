@@ -16,11 +16,6 @@ extension DashboardItemDtoMapper on ItemDto {
 
 extension DashboardSectionDtoMapper on SectionDto {
   QuizSetItem toQuizSetDomain() {
-    return QuizSetItem(
-      title: title,
-      description: description,
-      position: position,
-      fileName: fileName,
-    );
+    return QuizSetItem(title: title, description: description, position: position, fileName: fileName);
   }
 }

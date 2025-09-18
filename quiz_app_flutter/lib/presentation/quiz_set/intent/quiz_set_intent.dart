@@ -1,20 +1,9 @@
 // intents
-abstract class QuizSetIntent {}
 
-class LoadQuizSet extends QuizSetIntent {
-  final String? quizTopic;
-  LoadQuizSet(this.quizTopic);
-}
+import 'package:quiz_app_flutter/presentation/quiz/route/quiz_screen_data.dart';
 
-class NavigateToQuiz extends QuizSetIntent {
-  /*final QuizSetSectionItem data;
-  NavigateToQuiz(this.data);*/
-}
+class NavigateToQuiz {
+  final QuizScreenData data;
 
-// navigation events
-abstract class QuizSetNavEvent {}
-
-class QuizSetNavEventNavigateToQuiz extends QuizSetNavEvent {
-  /*final QuizScreenData data;
-  QuizSetNavEventNavigateToQuiz(this.data);*/
+  NavigateToQuiz(this.data);
 }

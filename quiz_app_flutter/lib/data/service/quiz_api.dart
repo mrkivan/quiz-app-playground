@@ -7,6 +7,7 @@ import '../model/quiz/quiz_list_dto.dart';
 
 class QuizApi {
   final Dio _dio;
+
   QuizApi(this._dio);
 
   Future<DashboardDto> getDashboard() async {

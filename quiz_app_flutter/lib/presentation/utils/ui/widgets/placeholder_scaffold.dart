@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app_flutter/presentation/utils/state/quiz_app_ui_state.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:quiz_app_flutter/presentation/utils/ui/widgets/quiz_app_top_appbar.dart';
 
 import 'background_wrapper.dart';
@@ -7,7 +7,7 @@ import 'background_wrapper.dart';
 /// A reusable scaffold with background image and placeholder handling
 class PlaceholderScaffold<T> extends StatelessWidget {
   final QuizAppToolbar toolbarConfig;
-  final QuizAppUiState<T> uiState;
+  final AsyncValue<T> asyncValue;
   final EdgeInsetsGeometry padding;
   final void Function() onRetryClicked;
   final Widget Function(T data) bodyContent;
@@ -15,7 +15,7 @@ class PlaceholderScaffold<T> extends StatelessWidget {
   const PlaceholderScaffold({
     super.key,
     required this.toolbarConfig,
-    required this.uiState,
+    required this.asyncValue,
     required this.bodyContent,
     this.onRetryClicked = _defaultRetry,
     this.padding = EdgeInsets.zero,
@@ -30,18 +30,10 @@ class PlaceholderScaffold<T> extends StatelessWidget {
       body: BackgroundWrapper(
         child: Padding(
           padding: padding,
-          child: Builder(
-            builder: (_) {
-              return uiState.map(
-                loading: (_) => const LoadingView(),
-                success: (s) => bodyContent(s.data),
-                error:
-                    (e) => ErrorView(
-                      message: e.message,
-                      onRetryClicked: onRetryClicked,
-                    ),
-              );
-            },
+          child: asyncValue.when(
+            loading: () => const LoadingView(),
+            data: (data) => bodyContent(data),
+            error: (error, stackTrace) => ErrorView(message: error.toString(), onRetryClicked: onRetryClicked),
           ),
         ),
       ),
@@ -62,11 +54,7 @@ class ErrorView extends StatelessWidget {
   final String message;
   final void Function() onRetryClicked;
 
-  const ErrorView({
-    super.key,
-    required this.message,
-    required this.onRetryClicked,
-  });
+  const ErrorView({super.key, required this.message, required this.onRetryClicked});
 
   @override
   Widget build(BuildContext context) {
@@ -74,12 +62,7 @@ class ErrorView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            message.isNotEmpty
-                ? message
-                : "Failed to load data. Please try again.",
-            textAlign: TextAlign.center,
-          ),
+          Text(message.isNotEmpty ? message : "Failed to load data. Please try again.", textAlign: TextAlign.center),
           const SizedBox(height: 16),
           ElevatedButton.icon(
             onPressed: onRetryClicked,

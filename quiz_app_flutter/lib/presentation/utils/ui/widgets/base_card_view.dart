@@ -7,21 +7,12 @@ class BaseCardView extends StatelessWidget {
   final ShapeBorder? shape;
   final double? elevation;
 
-  const BaseCardView({
-    super.key,
-    required this.child,
-    required this.onClick,
-    this.padding,
-    this.shape,
-    this.elevation,
-  });
+  const BaseCardView({super.key, required this.child, required this.onClick, this.padding, this.shape, this.elevation});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape:
-          shape ??
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      shape: shape ?? RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       elevation: elevation ?? 4,
       color: Theme.of(context).colorScheme.surface,
       child: InkWell(

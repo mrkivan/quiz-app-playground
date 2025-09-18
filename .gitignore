@@ -1,0 +1,3 @@
+# Ignore only user-specific state files
+quiz_app_ios/**/*.xcuserstate
+

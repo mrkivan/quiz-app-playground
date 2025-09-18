@@ -2,10 +2,7 @@ import '../../data/model/dashboard/dashboard_dto.dart';
 import '../entities/dashboard/dashboard_data.dart';
 
 extension DashboardDtoX on DashboardDto {
-  DashboardData toDomain() => DashboardData(
-    total: total,
-    items: items.map((e) => e.toDomain()).toList(),
-  );
+  DashboardData toDomain() => DashboardData(total: total, items: items.map((e) => e.toDomain()).toList());
 }
 
 extension DashboardItemDtoX on ItemDto {
@@ -20,10 +17,6 @@ extension DashboardItemDtoX on ItemDto {
 }
 
 extension DashboardSectionDtoX on SectionDto {
-  DashboardDataSection toDomain() => DashboardDataSection(
-    title: title,
-    description: description,
-    position: position,
-    fileName: fileName,
-  );
+  DashboardDataSection toDomain() =>
+      DashboardDataSection(title: title, description: description, position: position, fileName: fileName);
 }

@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:quiz_app_flutter/presentation/dashboard/route/dashboard_route.dart';
 import 'package:quiz_app_flutter/presentation/quiz/route/quiz_route.dart';
+import 'package:quiz_app_flutter/presentation/quiz/route/quiz_screen_data.dart';
 import 'package:quiz_app_flutter/presentation/quiz_set/route/quiz_set_route.dart';
 import 'package:quiz_app_flutter/presentation/result/route/result_route.dart';
 
@@ -25,10 +26,7 @@ class NavKeys {
 final GoRouter router = GoRouter(
   initialLocation: QuizMasterDestinations.routeHome,
   routes: [
-    GoRoute(
-      path: QuizMasterDestinations.routeHome,
-      builder: (context, state) => const DashboardRoute(),
-    ),
+    GoRoute(path: QuizMasterDestinations.routeHome, builder: (context, state) => const DashboardRoute()),
     GoRoute(
       path: QuizMasterDestinations.routeQuizSet,
       builder: (context, state) {
@@ -39,12 +37,8 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: QuizMasterDestinations.routeQuiz,
       builder: (context, state) {
-        final quizId =
-            int.tryParse(
-              state.uri.queryParameters[QuizMasterDestinations.argQuizId] ?? '',
-            ) ??
-            -1;
-        return QuizRoute(quizId: quizId);
+        final screenData = state.extra as QuizScreenData?;
+        return QuizRoute(quizId: -1, screenData: screenData);
       },
     ),
     GoRoute(
