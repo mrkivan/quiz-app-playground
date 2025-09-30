@@ -166,7 +166,7 @@ fun ResultReportCard(data: ResultScreenData) {
                     Text(
                         text = stringResource(
                             id = R.string.result_correct_answers,
-                            data.totalInCorrectItems
+                            data.totalCorrectItems
                         )
                     )
                 }

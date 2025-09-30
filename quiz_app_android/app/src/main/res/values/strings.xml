@@ -6,7 +6,7 @@
     <string name="label_back">Back</string>
     <string name="label_answer">Answer:</string>
     <string name="explanation">Explanation: %1$s</string>
-    <string name="previous_result">Previous Result: %1$d%%</string>
+    <string name="previous_result">Previous Result: %1$d%</string>
     <string name="result_total_questions">Total Questions: %1$d</string>
     <string name="result_correct_answers">Correct Answers: %1$d</string>
     <string name="tab_current">Current (%1$d)</string>
