@@ -1,7 +1,6 @@
 // MARK: - Components
 
 import SwiftUI
-import SwiftUICore
 import XCUIAutomation
 
 struct QuizSetScreenItem: View {
