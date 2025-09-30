@@ -78,14 +78,14 @@ kotlin {
             implementation(libs.coil.network.ktor)
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
-            implementation("com.russhwolf:multiplatform-settings-no-arg:1.3.0")
+            implementation(libs.multiplatform.settings.no.arg)
         }
     }
 }
 
 android {
     namespace = "com.tnm.quizappkmp"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.tnm.quizappkmp"
@@ -101,7 +101,7 @@ android {
     }
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
         }
     }
     compileOptions {

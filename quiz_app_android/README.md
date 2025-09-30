@@ -64,8 +64,8 @@ This project follows the principles of **Clean Architecture** to ensure a separa
 ## Setup Instructions
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/mrkivan/quiz_app_android.git
-   cd quiz_app_android
+   git clone https://github.com/mrkivan/quiz-app-playground.git
+   cd quiz-app-playground/quiz_app_android
    ```
 2. Open in Android Studio (Giraffe or later)
 3. Run the app on emulator/device
