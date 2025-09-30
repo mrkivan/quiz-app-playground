@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="no_data_available">No data available</string>
+
+    <string name="app_name">Quiz Master - Android, Kotlin &amp; Java</string>
+    <string name="question_progress">%1$d/%2$d</string>
+    <string name="label_loading">Loading…</string>
+    <string name="label_error">Error</string>
+    <string name="label_back">Back</string>
+    <string name="label_answer">Answer:</string>
+    <string name="explanation">Explanation: %1$s</string>
+    <string name="previous_result">Previous Result: %1$d%</string>
+    <string name="result_total_questions">Total Questions: %1$d</string>
+    <string name="result_correct_answers">Correct Answers: %1$d</string>
+    <string name="tab_current">Current (%1$d)</string>
+    <string name="tab_skipped">Skipped (%1$d)</string>
+    <string name="tab_incorrect">Incorrect (%1$d)</string>
+    <!--Button strings-->
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_result">Result</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_retry">Retry</string>
+    <!--Dialog strings-->
+    <string name="dialog_skip_title">Skip this question!!!</string>
+    <string name="dialog_skip_message">Do you really want to skip this?</string>
+    <string name="dialog_submit_title">Submit your answer!</string>
+    <string name="dialog_submit_message">Do you want to confirm your submission?”</string>
+    <string name="dialog_exit_title">Exit This Quiz?</string>
+    <string name="dialog_exit_message">"Are you sure that you want to exit?"</string>
+</resources>
